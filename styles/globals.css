@@ -34,3 +34,18 @@ body {
   border-radius: 5px;
   background-color: #273c75;
 }
+
+.B{
+  margin-top: 1em;
+  align-items: center;
+}
+.B1 {
+  align-items: center;
+}
+
+.B:hover {
+  background-color: rgb(136, 255, 127);
+}
+.B1:hover{
+  cursor: pointer;
+}

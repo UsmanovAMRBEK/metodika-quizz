@@ -9,10 +9,11 @@ const Result = () => {
   let Dispatch = useDispatch();
   let [Res, setRes] = useState(null);
 
+  const refresh = () => window.location.reload(true);
   let Stats = useSelector((Stat) => {
     return Stat.Reducer;
   });
-
+  let UserArray = Stats.UserArray;
   useEffect(() => {
     let UserArray = Stats.UserArray;
     let Sum = 0;
@@ -48,6 +49,15 @@ const Result = () => {
               <p>{API.length - Res}</p>
             </div>
           </div>
+
+          <div className="B bg-[#13cdef] p-3 flex All justify-between text-center">
+            <div className="B1">
+              {/* <p>Testni qayta ishlash</p> */}
+              {/* <p>{API.length}</p> */}
+              <button onClick={refresh} className="refresh-btn">Testni qayta ishlash</button>
+            </div>
+          </div>
+
         </div>
 
         <div className="Right sm:col-span-5 sm:row-span-2">
@@ -56,6 +66,9 @@ const Result = () => {
               return (
                 <div>
                   <p>Question # {Ind + 1}</p>
+                  <p className="text-[#ffdd59]">
+                    Your ans: {Elem.Options[UserArray[Ind]]}
+                  </p>
                   <p className="text-[#ffdd59]">
                     Ans: {Elem.Options[Elem.Answer]}
                   </p>
